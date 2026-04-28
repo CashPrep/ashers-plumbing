@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Asher's Plumbing and Heating - Licensed plumber serving Sharon, MA and surrounding areas since 1985. Call (781) 784-0441." />
+  <title>Asher's Plumbing & Heating | Sharon, MA</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a3c6e;
+      --lightblue: #2e6db4;
+      --orange: #e87722;
+      --gray: #f5f7fa;
+      --text: #222;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); }
+
+    /* NAV */
+    nav {
+      background: var(--blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo { color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
+    nav .logo span { color: var(--orange); }
+    nav a.cta-nav {
+      background: var(--orange);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    nav a.cta-nav:hover { background: #cf6210; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 60%, var(--lightblue) 100%);
+      color: #fff;
+      padding: 90px 40px 80px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 16px; line-height: 1.2; }
+    .hero h1 span { color: var(--orange); }
+    .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 32px; opacity: 0.92; }
+    .hero .badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    .hero .cta-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .btn-primary:hover { background: #cf6210; }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: 2px solid #fff;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 18px 40px;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .trust-bar span::before { margin-right: 8px; }
+
+    /* SECTIONS */
+    section { padding: 70px 40px; }
+    section:nth-child(even) { background: var(--gray); }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #666;
+      margin-bottom: 48px;
+      font-size: 1rem;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--orange);
+    }
+    .service-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .service-card h3 { color: var(--blue); margin-bottom: 12px; font-size: 1.1rem; }
+    .service-card ul { list-style: none; padding: 0; }
+    .service-card ul li { padding: 4px 0; color: #444; font-size: 0.95rem; }
+    .service-card ul li::before { content: "✓ "; color: var(--orange); font-weight: 700; }
+
+    /* WHY US */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .why-card {
+      text-align: center;
+      padding: 32px 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .why-card .num { font-size: 2.5rem; font-weight: 800; color: var(--orange); }
+    .why-card h4 { color: var(--blue); margin: 8px 0 6px; font-size: 1rem; }
+    .why-card p { color: #555; font-size: 0.9rem; }
+
+    /* ABOUT */
+    .about-inner {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #444;
+    }
+    .about-inner strong { color: var(--blue); }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .contact-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .contact-card h4 { color: var(--blue); margin-bottom: 8px; }
+    .contact-card a { color: var(--orange); text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    .contact-card p { color: #555; font-size: 0.9rem; margin-top: 6px; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--blue);
+      color: #fff;
+      text-align: center;
+      padding: 70px 40px;
+    }
+    .cta-banner h2 { font-size: 2rem; margin-bottom: 12px; }
+    .cta-banner p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 0.9rem;
+    }
+    footer strong { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.9rem; }
+      nav { padding: 14px 20px; }
+      section { padding: 50px 20px; }
+      .trust-bar { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Asher's <span>Plumbing & Heating</span></div>
+    <a class="cta-nav" href="tel:7817840441">📞 Call Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Sharon's Trusted<br><span>Plumbing & Heating</span> Experts</h1>
+    <p>Licensed, insured, and serving homeowners and businesses in Sharon, MA since 1985. We do the job right — the first time.</p>
+    <div class="badges">
+      <span class="badge">✅ BBB Accredited</span>
+      <span class="badge">🛡️ Licensed & Insured</span>
+      <span class="badge">⭐ 2-Year Labor Warranty</span>
+      <span class="badge">🏠 Residential & Commercial</span>
+    </div>
+    <div class="cta-group">
+      <a class="btn-primary" href="tel:7817840441">📞 (781) 784-0441</a>
+      <a class="btn-secondary" href="#services">See Our Services</a>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <span>🔧 40+ Years Experience</span>
+    <span>📍 Sharon, MA</span>
+    <span>⚡ Fast Response</span>
+    <span>💯 2-Year Warranty</span>
+    <span>🏅 BBB Accredited</span>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Full-service plumbing, heating, and HVAC for homes and businesses in Sharon and surrounding communities.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🚿</div>
+        <h3>Plumbing</h3>
+        <ul>
+          <li>Water Heaters</li>
+          <li>Kitchen & Bathroom</li>
+          <li>Sewer Line Replacement</li>
+          <li>Leak Repair</li>
+          <li>Garbage Disposal Repair</li>
+          <li>Installation & Maintenance</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔥</div>
+        <h3>Heating</h3>
+        <ul>
+          <li>Boiler Installation & Repair</li>
+          <li>Commercial Boiler Repair</li>
+          <li>Geothermal Heating</li>
+          <li>Heating Maintenance</li>
+          <li>System Upgrades</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon">❄️</div>
+        <h3>HVAC & Cooling</h3>
+        <ul>
+          <li>AC Condenser Replacement</li>
+          <li>AC Companies & Installs</li>
+          <li>HVAC Maintenance</li>
+          <li>System Diagnostics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="about">
+    <h2 class="section-title">Why Choose Asher's?</h2>
+    <p class="section-sub">We've built our reputation one satisfied customer at a time.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">40+</div>
+        <h4>Years of Experience</h4>
+        <p>Asher has been a licensed plumber since 1985 — you're in expert hands.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">2yr</div>
+        <h4>Labor Warranty</h4>
+        <p>We stand behind our work with a full 2-year labor warranty on every job.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">BBB</div>
+        <h4>Accredited Business</h4>
+        <p>Proud BBB Accredited business serving Sharon and surrounding MA towns.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">24/7</div>
+        <h4>Available When You Need Us</h4>
+        <p>Plumbing emergencies don't wait — neither do we.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2 class="section-title">About Asher's Plumbing & Heating</h2>
+    <p class="section-sub"></p>
+    <div class="about-inner">
+      <p><strong>Asher's Plumbing and Heating</strong> has been serving the Sharon, MA community and surrounding areas since 2005, with owner Asher Avrahami bringing over 40 years of hands-on plumbing and heating expertise to every job.</p>
+      <br/>
+      <p>We specialize in both <strong>residential and commercial</strong> projects — from fixing a leaky faucet to replacing a full sewer line or installing a commercial boiler. No job is too big or too small. Our commitment to <strong>professional workmanship, honest pricing, and responsive service</strong> has made us a trusted name in the Sharon community.</p>
+      <br/>
+      <p>When neighbors ask each other for a recommendation, Asher's name comes up — and we take that reputation seriously.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-sub">Ready to get started? Reach out today for a free estimate.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>Call Us</h4>
+        <a href="tel:7817840441">(781) 784-0441</a>
+        <p>Mon–Fri 8am–8pm<br>Sat–Sun Available</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h4>Our Address</h4>
+        <a href="https://maps.google.com/?q=45+Azalea+Rd+Sharon+MA+02067" target="_blank">45 Azalea Rd<br>Sharon, MA 02067</a>
+        <p>Serving Sharon & surrounding towns</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🏅</div>
+        <h4>Licensed & Accredited</h4>
+        <p style="font-size:1rem;">MA Licensed Plumber<br>BBB Accredited Business<br>Fully Insured</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Need a Plumber in Sharon, MA?</h2>
+    <p>Call Asher's today for fast, reliable service with a 2-year labor warranty.</p>
+    <a class="btn-primary" href="tel:7817840441">📞 Call (781) 784-0441 Now</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Asher's Plumbing & Heating</strong> | 45 Azalea Rd, Sharon, MA 02067 | <a href="tel:7817840441" style="color:#e87722;">(781) 784-0441</a></p>
+    <p style="margin-top:8px;">© 2026 Asher's Plumbing & Heating. All rights reserved. | MA Licensed Plumber | BBB Accredited</p>
+  </footer>
+
+</body>
+</html>
